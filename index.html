@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Interactive Map</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"> 
+  </head>
+  <body>
+    <h1>Maps</h1>
+    <!--allows user to select locations to load onto the map-->
+    <form>
+      <label>Choose a Location:</label>
+      <select id="selectLocation" name="locations">
+        <option value="australia">Australia</option>
+        <option value="kyoto">Kyoto, Japan</option>
+        <option value="dalian">Dalian, China</option>
+        <option value="berlin">Berlin, Germany</option>
+        <option value="uw">University of Washington</option>
+      </select><br>
+      
+      <!--Or the user can enter their own latitude and longitude-->
+      <p>Enter a latitude between -85 and 85 or enter a longitude between -180 and 180. Zoom only accepts whole numbers</p>
+      <!--step="any" allows us to enter decimal numbers into the nmber input-->
+      <label>Latitude:
+        <input id="lat" type="number" step="any" min="-85" max="85">
+      </label>
+      <label>Longitude:
+        <input id="long" type="number" step="any" min="-180" max="180">
+      </label>
+      <label>Zoom:
+        <input id="zoom" type="number">
+      </label>
+      <input id="submitButton" type="submit">
+    </form>
+    
+    <div id="map"></div>
+    <!--CDN link for jQuery-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="  crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA53vL-pvN2FlGHRDfRjLgcj-9vKJNNRl8&callback=initMap" async defer></script>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
