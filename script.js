@@ -72,8 +72,8 @@ function changeLocation() {
 
 //this function handles the situation when user selects location from drop down menu
 function handleSelect() {
+  //get the value of the user selection on drop down menu
   var location = $('#selectLocation').val();
-  console.log(location);
   var latt;
   var long;
   //handle the cases
@@ -104,7 +104,7 @@ function handleSelect() {
       zoom = 12;
       break;
   }
-  console.log(latt);
+  //create the position variable and update map and marker
   var position = {lat: latt, lng: long};
   //updates the map with the new coordinates and zoom
   map = new google.maps.Map($('#map')[0], {
